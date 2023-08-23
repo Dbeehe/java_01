@@ -16,7 +16,7 @@ public class MainClass {
             System.out.println("======= 학생관리 =======");
             System.out.println("1.학생등록, 2.학생상세조회, 3.학생목록조회");
             System.out.println("선택> ");
-            int num = Scanner.nextInt();
+            int num = Scanner.n();
             if (num == 1) {
                 System.out.println("학생등록 메뉴");
                 break;
