@@ -10,10 +10,7 @@ public class StudentRepository {
     private List<StudentDTO> studentDTOList = new ArrayList<>();
 
     public boolean save(StudentDTO studentDTO) {
-        // id 값을 하나씩 증가시켜 함께 저장
-        // (현재 리스트에 저장된 학생수 가져오고 1증가하여 저장)
-//        int size = studentDTOList.size();
-//        studentDTO.setId((long) (size+1));
+
         // 리스트에 신규학생 추가
         return studentDTOList.add(studentDTO);
     }
@@ -39,8 +36,8 @@ public class StudentRepository {
 //        }
 
         // 반복문을 돌려서 일치하는 결과가 없으면 null 리턴
-        return null;
-    }
+            return null;
+        }
 
     public void delete(long id) {
 //        for (int i=0;i< studentDTOList.size();i++) {
@@ -51,6 +48,14 @@ public class StudentRepository {
         for (StudentDTO studentDTO : studentDTOList) {
             if (id == studentDTO.getId()) {
                 studentDTOList.remove(studentDTO);
+            }
+        }
+    }
+
+    public void update(long id, String updateMobile) {
+        for(StudentDTO studentDTO : studentDTOList){
+            if(id== studentDTO.getId()){
+                studentDTO.setStudentMobile((updateMobile));
             }
         }
     }

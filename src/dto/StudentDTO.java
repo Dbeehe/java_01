@@ -13,6 +13,7 @@ public class StudentDTO {
     }
 
     public StudentDTO(String studentName, String studentMajor, String studentMobile) {
+        // 객체를 생성하면서 num 값을 하나 증가시킨 결과를 id에 저장
         this.id = num++;
         this.studentName = studentName;
         this.studentMajor = studentMajor;

@@ -61,8 +61,8 @@ public class StudentService {
         findAll();
 
         // 조회할 id 입력
-        System.out.print("조회 id: ");
-        long id = scanner.nextLong();
+            System.out.print("조회 id: ");
+            long id = scanner.nextLong();
         // 입력받은 id를 repository로 넘겨서 DTO 객체를 리턴받음.
         StudentDTO studentDTO = studentRepository.findById(id);
         // 조회결과 출력
@@ -79,6 +79,23 @@ public class StudentService {
         System.out.print("삭제 id: ");
         long id = scanner.nextLong();
         studentRepository.delete(id);
+    }
+
+    public void uptate() {
+        // 수정할 id를 입력 받은 뒤 해당 정보가 있으면 수정할 전화번호를 입력받고
+        // 해당 정보가 앖으면 없다는 출력을 하고 메인 메뉴로 돌아감
+        findAll();;
+        //수정할 id 입력
+        System.out.print("수정 id: ");
+        long id = scanner.nextLong();
+        StudentDTO studentDTO = studentRepository.findById(id);
+        if(studentDTO == null){
+            System.out.println("해당 정보가 없습니다");
+        }else{
+            System.out.println("수정할 전화번호: ");
+            String updateMobile = scanner.next();
+            studentRepository.update(id, updateMobile);
+        }
     }
 
     /*

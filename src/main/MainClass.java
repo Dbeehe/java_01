@@ -20,10 +20,10 @@ public class MainClass {
             System.out.println("선택>  ");
             int sel = scanner.nextInt();
             if (sel == 1) {
-                System.out.println("학생등록 메뉴");
+                System.out.println("학생등록");
                 studentService.save();
             } else if (sel == 2) {
-                System.out.println("학생조회 메뉴");
+                System.out.println("학생조회");
                 studentService.findById();
                 /*
                     service 의 findById 메서드를 호출함.
@@ -34,12 +34,13 @@ public class MainClass {
                     - 리턴받은 값을 출력함.
                  */
             } else if (sel == 3) {
-                System.out.println("학생목록 메뉴");
+                System.out.println("학생목록");
                 studentService.findAll();
             } else if (sel == 4) {
-                System.out.println("학생수정 메뉴");
+                System.out.println("학생수정");
+                studentService.uptate();
             } else if (sel == 5) {
-                System.out.println("학생삭제 메뉴");
+                System.out.println("학생삭제");
                 studentService.delete();
             } else if (sel == 0) {
                 System.out.println("종료");
